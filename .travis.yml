@@ -1,9 +1,12 @@
+sudo: required
+
 services:
   - docker
-
-install:
-  - docker build -t ldejager/alpine-glibc-test .
-  - docker run -d --name alpine-glibc-test ldejager/alpine-glibc-test
+  
+before_install:
+  - docker build -t ldejager/alpine-glibc .
+  - docker run -d --name alpine-glibc-test ldejager/alpine-glibc-test /bin/sh -c "echo testing;"
+  - docker ps -a
 
 script:
   - docker ps | grep -q alpine-glibc-test
