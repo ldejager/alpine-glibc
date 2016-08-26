@@ -2,8 +2,8 @@ services:
   - docker
 
 install:
-  - docker build -t alpine-glibc .
-  - docker run -d alpine-glibc --name alpine-glibc
+  - docker build -t ldejager/alpine-glibc-test .
+  - docker run -d --name alpine-glibc-test ldejager/alpine-glibc-test
 
 script:
-  - docker ps | grep -q alpine-glibc
+  - docker ps | grep -q alpine-glibc-test
