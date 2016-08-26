@@ -3,7 +3,7 @@ services:
 
 install:
   - docker build -t alpine-glibc .
-  - docker run -d --name alpine-glibc alpine-glibc
+  - docker run -d alpine-glibc --name alpine-glibc
 
 script:
   - docker ps | grep -q alpine-glibc
