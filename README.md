@@ -1,6 +1,6 @@
 # Alpine Linux Glibc Docker Image
 
-[![Build Status](https://travis-ci.org/ldejager/alpine-glibc.svg?branch=master)](https://travis-ci.org/ldejager/alpine-glibc) [![](https://badge.imagelayers.io/ldejager/alpine-glibc:latest.svg)](https://imagelayers.io/?images=ldejager/alpine-glibc:latest 'Get your own badge on imagelayers.io')
+[![Build Status](https://travis-ci.org/ldejager/alpine-glibc.svg?branch=master)](https://travis-ci.org/ldejager/alpine-glibc) [![](https://images.microbadger.com/badges/image/ldejager/alpine-glibc.svg)](https://microbadger.com/images/ldejager/alpine-glibc "Get your own image badge on microbadger.com")
 
 Alpine Linux docker image with the GNU C Library installed.
 
