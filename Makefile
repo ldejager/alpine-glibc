@@ -40,18 +40,18 @@ endif
 all: build push
 
 build:
-				@echo "==> Building docker image: $(IMAGE)"
-				@docker build $(BUILD_OPTS) \
-			  --build-arg VCS_REF=$(GIT_COMMIT) \
-			  --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-				-t $(IMAGE):$(DOCKER_TAG) $(ROOTDIR)
+	@echo "==> Building docker image: $(IMAGE)"
+	@docker build $(BUILD_OPTS) \
+	--build-arg VCS_REF=$(GIT_COMMIT) \
+	--build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
+	-t $(IMAGE):$(DOCKER_TAG) $(ROOTDIR)
 
 push:
-				@echo "==> Pushing docker image $(IMAGE) version $(CODE_VERSION)"
-				@docker tag $(REPOSITORY):$(DOCKER_TAG) $(REPOSITORY):latest
-				@docker push $(REPOSITORY):$(DOCKER_TAG)
-				@docker push $(REPOSITORY):latest
+	@echo "==> Pushing docker image $(IMAGE) version $(CODE_VERSION)"
+	@docker tag $(REPOSITORY):$(DOCKER_TAG) $(REPOSITORY):latest
+	@docker push $(REPOSITORY):$(DOCKER_TAG)
+	@docker push $(REPOSITORY):latest
 
 clean:
-				@echo "==> Cleaning docker image: $(IMAGE)"
-				@docker rmi -f $(IMAGE)
+	@echo "==> Cleaning docker image: $(IMAGE)"
+	@docker rmi -f $(IMAGE)
