@@ -42,7 +42,6 @@ all: build push
 build:
 				@echo "==> Building docker image: $(IMAGE)"
 				@docker build $(BUILD_OPTS) \
-			  --build-arg VCS_URL=`git config --get remote.origin.url` \
 			  --build-arg VCS_REF=$(GIT_COMMIT) \
 			  --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
 				-t $(IMAGE):$(DOCKER_TAG) $(ROOTDIR)
