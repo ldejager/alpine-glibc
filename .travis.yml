@@ -4,9 +4,9 @@ services:
   - docker
 
 before_install:
-  - docker build -t ldejager/alpine-glibc-test .
-  - docker run -d --name alpine-glibc-test ldejager/alpine-glibc-test /bin/sh -c "echo testing;"
+  - docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` -t ldejager/alpine-glibc .
+  - docker run -d --name alpine-glibc ldejager/alpine-glibc /bin/sh -c "echo testing;"
   - docker ps -a
 
 script:
-  - docker ps | grep -q alpine-glibc-test
+  - docker ps | grep -q alpine-glibc
