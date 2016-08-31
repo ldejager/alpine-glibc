@@ -5,8 +5,10 @@ services:
 
 before_install:
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - make
+  - make build
   - docker run -d --name alpine-glibc ldejager/alpine-glibc /bin/sh -c "sleep 60;"
 
 script:
   - docker ps | grep -q alpine-glibc
+  - make push
+  - curl -X POST -d {} https://hooks.microbadger.com/images/ldejager/alpine-glibc/xqZKQIDeVpGIHd-30IKU9ZIkqqI=
