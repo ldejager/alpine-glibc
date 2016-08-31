@@ -1,4 +1,4 @@
-IMAGE       := ldejager/alpine-glibc
+IMAGE       := rwxlabs/alpine-glibc
 REPOSITORY  := docker.io/$(IMAGE)
 ROOTDIR     := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
 BUILD_OPTS  :=
