@@ -10,4 +10,6 @@ before_install:
   - docker ps -a
 
 script:
+  - docker logs alpine-glibc
   - docker ps | grep -q alpine-glibc
+  - docker ps -a
