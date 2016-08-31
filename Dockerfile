@@ -1,13 +1,13 @@
 FROM alpine:3.4
 
-MAINTAINER Leon de Jager <ldejager@coretanium.net>
+MAINTAINER Leon de Jager <ldejager@rwxlabs.io>
 
 ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.vcs-url="https://github.com/ldejager/alpine-glibc"
+      org.label-schema.vcs-url="https://github.com/rwxlabs/alpine-glibc"
 
 ENV GLIBC_VERSION 2.23-r1
 
