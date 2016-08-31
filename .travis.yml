@@ -6,10 +6,7 @@ services:
 before_install:
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - make
-  - docker run -d --name alpine-glibc ldejager/alpine-glibc /bin/sh -c "echo testing;"
-  - docker ps -a
+  - docker run -d --name alpine-glibc ldejager/alpine-glibc /bin/sh -c "sleep 60;"
 
 script:
-  - docker logs alpine-glibc
   - docker ps | grep -q alpine-glibc
-  - docker ps -a
